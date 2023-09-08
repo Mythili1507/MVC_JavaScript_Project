@@ -1,0 +1,90 @@
+
+body{
+    height: 100%;
+    /* background-color: orangered; */
+    /* background-image: url(Easy-Fruit-Dip-Recipe-3.jpg); */
+
+}
+.app-container
+{
+    display: flex; flex-direction: column; gap: 4px;
+    align-items: stretch;
+    padding: 8px;
+    background-color: rgba(246, 216, 244, 0.536);
+    /* min-height: 100%; */
+    /* min-height: 100vh; */
+    /* top: 0; left:0; right: 0; bottom: 0; */
+    
+    }
+
+.navbar-container
+{
+    display: flex; flex-direction: row; gap: 4px;
+    justify-content: center; align-items: stretch; align-content: stretch;
+    min-width: 128px; padding: 8px; background-color: lightpink;
+}
+
+.view-container
+{
+    display: flex; flex-direction: column; gap: 4px; flex-grow: 5;
+    padding: 8px;
+     /* background-color: yellow; */
+}
+
+.navbar-button
+{
+    background-color: gray; font-size: 32px;
+}
+.navbar-button-selected
+{
+    background-color: aquamarine;
+}
+
+.products-container
+{
+    display: flex; flex-direction: row; flex-wrap: wrap; 
+    gap: 32px; justify-content: space-evenly;
+    margin: 8px; padding: 32px;
+     /* border: 2px solid blue;  */
+    overflow-y: scroll;
+}
+
+.product-card
+{
+    display: flex; flex-direction: column; align-items: center;
+    gap: 8px;
+    padding: 8px; 
+    border: 1px solid seagreen; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.backto-home-btn{
+
+    width: 188px;
+}
+
+.product-pic{
+    font-size: 128px;
+}
+
+.main-img{
+    width: 50%;
+    height: 600px;
+    display: float;
+    float: right;
+    /* justify-content: flex-end; */
+    
+    
+}
+.main-heading{
+    font-size: 84px;
+}
+.browse-btn{
+    font-size: 22px;
+    width: 320px;
+    display: flex;
+    justify-items: center;
+}
+/* .home-heading{
+    font-size: 180px;
+} */
