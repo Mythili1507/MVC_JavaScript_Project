@@ -1,8 +1,14 @@
 
 body{
-    height: 100%;
-    /* background-color: orangered; */
-    /* background-image: url(Easy-Fruit-Dip-Recipe-3.jpg); */
+    /* height: 100%; */
+    /* background-image: url(fruit-pic.png); */
+    background-image: url(MicrosoftTeams-image\ \(5\).png);
+    /* background: url(background-photo.jpg) center center cover no-repeat fixed; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: #fdf2e9;;
+
 
 }
 .app-container
@@ -10,18 +16,15 @@ body{
     display: flex; flex-direction: column; gap: 4px;
     align-items: stretch;
     padding: 8px;
-    background-color: rgba(246, 216, 244, 0.536);
-    /* min-height: 100%; */
-    /* min-height: 100vh; */
-    /* top: 0; left:0; right: 0; bottom: 0; */
-    
+
+
     }
 
 .navbar-container
 {
     display: flex; flex-direction: row; gap: 4px;
     justify-content: center; align-items: stretch; align-content: stretch;
-    min-width: 128px; padding: 8px; background-color: lightpink;
+    min-width: 128px; background-color: lightpink;
 }
 
 .view-container
@@ -29,6 +32,16 @@ body{
     display: flex; flex-direction: column; gap: 4px; flex-grow: 5;
     padding: 8px;
      /* background-color: yellow; */
+}
+
+.main-heading{
+    font-size: 82px;
+    /* color: rgb(245, 93, 76); */
+    color: #e67e22;
+    /* lightcoral */
+    margin-top: 2%;
+    /* color: seagreen; */
+
 }
 
 .navbar-button
@@ -42,7 +55,7 @@ body{
 
 .products-container
 {
-    display: flex; flex-direction: row; flex-wrap: wrap; 
+    display: flex; flex-direction: row; flex-wrap: wrap;
     gap: 32px; justify-content: space-evenly;
     margin: 8px; padding: 32px;
      /* border: 2px solid blue;  */
@@ -53,9 +66,9 @@ body{
 {
     display: flex; flex-direction: column; align-items: center;
     gap: 8px;
-    padding: 8px; 
-    border: 1px solid seagreen; 
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    /* border: 1px solid seagreen; */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .backto-home-btn{
@@ -73,18 +86,52 @@ body{
     display: float;
     float: right;
     /* justify-content: flex-end; */
-    
-    
+
+
 }
-.main-heading{
-    font-size: 84px;
-}
+
 .browse-btn{
     font-size: 22px;
-    width: 320px;
+    width: 200px;
     display: flex;
-    justify-items: center;
+    /* justify-items: center; */
+    /* background-color:  rgb(245, 93, 76); */
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+    /* border-radius:55px; */
+    height: 36px;
+    align-items: center;
 }
-/* .home-heading{
-    font-size: 180px;
-} */
+
+.home-desc{
+    font-size: 44px;
+    width: 994px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-weight: 300;
+    margin-top: 0%;
+    /* color: rgb(245, 97, 97); */
+    /* color: green; */
+    /* color: #eb984e; */
+   color : #cf711f;
+}
+
+.why-sec-main-heading
+{
+    color: #e67e22;
+}
+.why-desc
+{
+    color : #cf711f;
+    width: 800px;
+}
+.why-sec-heading
+{
+    color: #e67e22;
+    font-weight: bold;
+}
+.why-sec-desc
+{
+    color : #cf711f;
+}
