@@ -7,52 +7,56 @@ import { getAllProductsView } from "../view/getAllProductsView.js";
 import { getProductView } from "../view/getProductView.js";
 import { getCheckoutView } from "../view/checkoutView.js";
 import { getDealView } from "../view/getDealView.js";
+import { State } from "../state/state.js";
 
 
 class Controller
 {
-    currentViewName;    
+   // currentViewName;
     viewDivEl;
-    // state
-    
-    constructor(viewDivRef)
+     state
+    //  state = new State();
+
+    constructor(viewDivRef,stateRef)
     {
         this.viewDivEl = viewDivRef;
+        this.state = stateRef;
     }
-    
-    process(reqData)
+
+    process(action,data)
     {
-        console.log('Controller.process ',reqData);
+        console.log('Controller.process =',action);
+        console.log('Controller.process =',data);
         // get view contents
-        let viewContents = this.#getView(reqData);
+        let viewContents = this.#getView(action,data);
         // show view
         this.viewDivEl.innerHTML = viewContents;
+        this.state.innerHTML = viewContents;
     }
-    
     // private
-    #getView(reqData)
+    #getView(action,data)
     {
-        console.log('Controller.#getView ',reqData);
+        console.log('Controller.#getView action =',action,'Controller.#getView data =',data);
         let viewContents = '';
-        switch(reqData.action)
+        switch(action)
         {
             case 'home':
             {
-                this.currentView = 'Home';
+                this.state.currentView = 'Home';
                 viewContents = getHomeView();
             }break;
-            
+
             case 'browseProducts':
             {
-                this.currentView = 'AllProducts';
+                this.state.currentView = 'AllProducts';
                 let model = Object.values(dataBase.products);
                 viewContents = getAllProductsView(model);
             }break;
-            
+
             case 'viewProduct':
             {
-                this.currentView = 'Product';
-                let productId = reqData.productId;
+                this.state.currentView = 'Product';
+                let productId = data;
                 let model = dataBase.products[productId];
                 viewContents = getProductView(model);
             }break;
@@ -68,39 +72,40 @@ class Controller
                 }break;
             case 'checkout':
                 {
-                    this.currentView = 'Checkout';
-                    let productId = reqData.productId;//state
+
+                    this.state.currentView = 'Checkout';
+                    let productId = data;//state
                     let model = dataBase.products[productId];// list of prods matching the state
                     viewContents =  getCheckoutView(model);
                 }break;
 
                 case 'deals':
                     {
-                        this.currentView = 'Deals';
-                        let productId = reqData.productId;
+                        this.state.currentView = 'Deals';
+                        let productId = data;
                         let model = dataBase.products[productId];
                         viewContents = getDealView(model);
                     }break;
-            
+
             case 'thankyou':
             {
-                this.currentView = 'Thankyou';
-                let productId = reqData.productId;
+                this.state.currentView = 'Thankyou';
+                let productId = data;
                 let model = dataBase.products[productId];
                 viewContents = getThankyouView(model);
             }break;
-            
+
             default:
             {
-                this.currentView = 'Unknown';
-                viewContents = 'No view defined for action - '+reqData.action;
+                this.state.currentView = 'Unknown';
+                viewContents = 'No view defined for action - '+data;
             }
         }
-        
+
         console.log('viewContents = ',viewContents);
         return viewContents;
     }
-    
+
 }
 
 export { Controller };

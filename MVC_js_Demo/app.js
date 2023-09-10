@@ -1,36 +1,28 @@
 import { Controller } from "./controller/controller.js";
+import { State } from "./state/state.js";
 
-const INITIAL_VIEW_NAME = 'home';
+const INITIAL_ACTION = 'home';
 const viewDivEl = document.getElementById('viewDiv');
 
 console.log('App loading...');
 
 // state
-const appController = new Controller(viewDivEl);
+const stateRef = new State();
+const appController = new Controller(viewDivEl, stateRef);
 
 console.log('created controller : ',appController);
-
-
 console.log("showing home view initially after loading");
-let initialReqData = { action : INITIAL_VIEW_NAME};
-
-appController.process( initialReqData );
 
 
-console.log('App loaded successfully');
+console.log("attaching a function to global window object to trigger appcontroller.process")
+appController.process(INITIAL_ACTION,'' );
 
+//window.changeViewWithMVC = appController.process; object will not be available
 
-function changeView(viewAction, dataKey, dataValue)
+window.changeViewWithMVC = (action,data) =>
 {
-    let reqData = {};
-    reqData.action = viewAction;
-    reqData[dataKey] = dataValue;
-    
-    appController.process(reqData);
+    console.log("changeViewWithMVC action =", action,"changeViewWithMVC data = ", data);
+    appController.process(action,data);
 }
 
-
-// binding the module function to window object to be accessed in non module scopes; eg: in HTML onclick
-// -- BAD PRACTICE 😥; just for demo
-// better to use eventListeners if possible
-window.changeViewWithMVC = changeView;
+console.log('App loaded successfully');

@@ -2,7 +2,7 @@ function getHomeView(modelData)
 {
     let template =
     `
-    <div>
+    <div class= "home-container">
 
     <h1 class="home-desc"> Fruits are available in this online shop. Buy fresh & healthy fruits online at best price from this
      best fruit shop &
