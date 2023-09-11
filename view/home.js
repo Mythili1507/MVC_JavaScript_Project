@@ -27,7 +27,6 @@ function getHomeView(modelData)
 
     </div>
     `;
-{/* <button class="browse-btn" onClick="changeViewWithMVC('browseProducts')">Browse products</button> */}
     return template;
 }
 

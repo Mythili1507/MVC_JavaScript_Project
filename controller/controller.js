@@ -14,7 +14,7 @@ class Controller
 {
     viewDivEl;
     state;
-    
+
     constructor(viewDivRef, stateRef)
     {
         this.viewDivEl = viewDivRef;
@@ -30,7 +30,6 @@ class Controller
         this.viewDivEl.innerHTML = viewContents;
         console.log("Controller.process view=",this.state.getCurrentViewName());
     }
-    // private
     #getView(action,data)
     {
         console.log('Controller.#getView action =',action,', data =',data);
@@ -38,73 +37,73 @@ class Controller
         switch(action)
         {
             case 'home':
-            {
-                this.state.setCurrentViewName("Home");
-                viewContents = getHomeView();
-            }break;
+                {
+                    this.state.setCurrentViewName("Home");
+                    viewContents = getHomeView();
+                }break;
 
             case 'browseProducts':
-            {
-                this.state.setCurrentViewName('AllProducts');
-                let model = Object.values(dataBase.products);
-                viewContents = getAllProductsView(model);
-            }break;
+                {
+                    this.state.setCurrentViewName('AllProducts');
+                    let model = Object.values(dataBase.products);
+                    viewContents = getAllProductsView(model);
+                }break;
 
             case 'viewProduct':
-            {
-                this.state.setCurrentViewName('Product');
-                let productId = data;
-                let model = dataBase.products[productId];
-                viewContents = getProductView(model);
-            }break;
+                {
+                    this.state.setCurrentViewName('Product');
+                    let productId = data;
+                    let model = dataBase.products[productId];
+                    viewContents = getProductView(model);
+                }break;
 
             case 'addToCart':
-            {   
-                let productId = data;
-                this.state.addToCart(productId);
-                this.state.setCurrentViewName('AllProducts');
-                let model = Object.values(dataBase.products);
-                viewContents = getAllProductsView(model);
-            }break;
+                {
+                    let productId = data;
+                    this.state.addToCart(productId);
+                    this.state.setCurrentViewName('AllProducts');
+                    let model = Object.values(dataBase.products);
+                    viewContents = getAllProductsView(model);
+                }break;
 
             case 'buyNow':
                 {
                    let productId = data;
-                   this.state.addToCart(productId); 
+                   this.state.addToCart(productId);
                    let model = this.#createCheckoutModel();
                    this.state.setCurrentViewName('Checkout');
                    viewContents = getCheckoutView(model);
                 }break;
 
             case 'checkout':
-            {
-               let model = this.#createCheckoutModel();
-               this.state.setCurrentViewName('Checkout');
-               viewContents = getCheckoutView(model);
-            }break;
+                {
+                let model = this.#createCheckoutModel();
+                this.state.setCurrentViewName('Checkout');
+                viewContents = getCheckoutView(model);
+                }break;
 
             case 'deals':
-            {
-                this.state.setCurrentViewName('Deals');
-                viewContents = getDealView();
-            }break;
+                {
+                    this.state.setCurrentViewName('Deals');
+                    viewContents = getDealView();
+                }break;
 
             case 'thankyou':
-            {
-                this.state.setCurrentViewName('Thankyou');
-                let productId = data;
-                let model = dataBase.products[productId];
-                viewContents = getThankyouView(model);
-            }break;
+                {
+                    this.state.setCurrentViewName('Thankyou');
+                    let productId = data;
+                    let model = dataBase.products[productId];
+                    viewContents = getThankyouView(model);
+                }break;
 
             default:
-            {
-                this.state.setCurrentViewName('Unknown');
-                viewContents = 'No view defined for action - '+data;
-            }
+                {
+                    this.state.setCurrentViewName('Unknown');
+                    viewContents = 'No view defined for action - '+data;
+                }
         }
 
-        // console.log('viewContents = ',viewContents);
+
         return viewContents;
     }
 
