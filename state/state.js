@@ -8,12 +8,18 @@
   {
     return this.#currentViewName;
   }
+
   setCurrentViewName(currView)
   {
     this.#currentViewName = currView;
   }
 
-  addtoCart(productId)
+  getCartItems()
+  {
+    return this.#cartItems.slice();
+  }
+
+  addToCart(productId)
   {
     if(!this.#cartItems.includes(productId))
     {
@@ -24,7 +30,7 @@
   removeFromCart(productId)
   {
     let i = this.#cartItems.indexOf(productId);
-    if(!i== -1)
+    if(i !== -1)
     {
       this.#cartItems.splice(i,1);
     }
