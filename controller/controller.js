@@ -94,6 +94,7 @@ class Controller
                     let productId = data;
                     let model = dataBase.products[productId];
                     viewContents = getThankyouView(model);
+                    this.state.clearCart();
                 }break;
 
             default:

@@ -3,6 +3,8 @@ body
 {
     height: 100%;
     background-image: url(/images/bg-img.png);
+    /* background-color: #ACC8E5; */
+    color: #112A46;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -12,7 +14,7 @@ body
 {
     display: flex; flex-direction: column; gap: 4px;
     align-items: stretch;
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .navbar-container
@@ -31,7 +33,7 @@ body
 .main-heading
 {
     font-size: 82px;
-    color: #e67e22;
+    /* color: #e67e22; */
     margin-top: 2%;
 }
 
@@ -83,14 +85,17 @@ body
 .browse-btn
 {
     font-size: 22px;
-    width: 200px;
+    width: 212px;
     display: flex;
+    justify-content: center;
     background-color: #e67e22;
+    border-radius: 50px;
     color: white;
     border: none;
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
-    height: 36px;
+    height: 44px;
     align-items: center;
+
 }
 
 .home-desc
@@ -99,29 +104,29 @@ body
     width: 994px;
     font-weight: 300;
     margin-top: 0%;
-    color: #eb984e;
+    /* color: #eb984e; */
 }
 
 .why-sec-main-heading
 {
-    color: #e67e22;
+    /* color: #e67e22; */
 }
 
 .why-desc
 {
-    color : #cf711f;
+    /* color : #cf711f; */
     width: 800px;
 }
 
 .why-sec-heading
 {
-    color: #e67e22;
+    /* color: #e67e22; */
     font-weight: bold;
 }
 
 .why-sec-desc
 {
-    color : #cf711f;
+    /* color : #cf711f; */
 }
 
 /* Deals */
