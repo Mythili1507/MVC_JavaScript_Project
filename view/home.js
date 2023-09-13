@@ -14,14 +14,14 @@ function getHomeView(modelData)
      <p class="why-desc"> Fruits are nature's gift to mankind. These are not only delicious and refreshing but are also the chief source of vitamins, minerals and proteins. These constituents are essential for the normal physiological well being and help in maintaining healthy state through development of
      resistance against pathogens </p>
 
-    <h5 class="why-sec-heading"> 20+ Years of Experience</h5>
+    <div class="why-sec-heading"> 20+ Years of Experience</div>
 
     <p class="why-sec-desc"> 20+ years of challenges, renewal, changes, we faced all of that made our distinctive mark</p>
 
-    <h5 class="why-sec-heading">We Provide Fresh Quality Fruits</h5>
+    <div class="why-sec-heading">We Provide Fresh Quality Fruits</div>
     <p class="why-sec-desc"> High quality, health and deliciousness are our quality</p>
 
-    <h5 class="why-sec-heading">Our Worldwide Suppilers</h5>
+    <div class="why-sec-heading">Our Worldwide Suppilers</div>
 
     <p class="why-sec-desc"> We bring fruits of the world to you</p>
 

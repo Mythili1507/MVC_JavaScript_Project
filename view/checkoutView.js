@@ -5,7 +5,7 @@ function getCheckoutView(modelData)
   `
   <div class= "checkout-container">
     <div>
-    <table id="checkoutTableId">
+    <table id="checkoutTableId" style="border:6px solid orange;">
       <thead>
         <tr><th>S.no</th><th>Name</th><th>Picture</th><th>Price</th></tr>
       </thead>
@@ -27,7 +27,7 @@ function getProductsTableTemplate(productsList)
     for(let i=0; i<productsList.length; i++)
     {
       let product = productsList[i];
-      let rowTemplate = 
+      let rowTemplate =
       `
       <tr><td>${i+1}</td><td>${product.name}</td><td>${product.pic}</td><td>$ ${product.price}</td></tr>
       `;

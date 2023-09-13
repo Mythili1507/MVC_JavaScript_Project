@@ -9,7 +9,7 @@ function getAllProductsView(modelData)
 
     let template =
     `
-    <div><button onclick="changeViewWithMVC('checkout')">🛒 Checkout</button></div>
+    <div><button class="detail-view-checkout" onclick="changeViewWithMVC('checkout')">🛒 Checkout</button></div>
     <div class='products-container'>
         ${subTemplateList.join('')}
     </div>
@@ -25,7 +25,7 @@ function getBriefProductView(product)
         <div class="product-pic">${product.pic}</div>
         <div>${product.name}</div>
         <div>$ ${product.price}</div>
-        <button onclick="changeViewWithMVC('viewProduct','${product.id}')">Detail View</button>
+        <button  class="detail-view-btn" onclick="changeViewWithMVC('viewProduct','${product.id}')">Detail View</button>
     </div>
     `;
     return subTemplate;

@@ -1,9 +1,8 @@
-
 import { Product } from "../model/product.js";
 
-export const dataBase = 
+export const dataBase =
 {
-    products : 
+    products :
     {
         "001" : new Product('001' ,'Apple', '🍎', 55.00, 'Fresh Apples'),
 
